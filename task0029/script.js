@@ -9,5 +9,5 @@ function sum () {
     let inpOne = document.getElementById("one")
     let inpTwo = document.getElementById("two")
     let sum = document.querySelector("div")
-    sum.innerText = Number(inpOne.value) + Number(inpTwo.value)
+    sum.textContent = Number(inpOne.value) + Number(inpTwo.value)
 }
