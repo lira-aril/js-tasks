@@ -6,8 +6,8 @@ function start() {
 }
 
 function sum () {
-    let inpOne = document.getElementById("one")
-    let inpTwo = document.getElementById("two")
-    let sum = document.querySelector("div")
+    const inpOne = document.getElementById("one")
+    const inpTwo = document.getElementById("two")
+    const sum = document.querySelector("div")
     sum.textContent = Number(inpOne.value) + Number(inpTwo.value)
 }

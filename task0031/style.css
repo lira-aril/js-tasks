@@ -1,0 +1,47 @@
+/* вариант 1
+
+/* .container{
+    width: 600px;
+    height: 500px;
+    margin: 50px auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.bulb-off{
+    width: 265px;
+    height: 400px;
+    background: url('./img/lightoff.png') no-repeat;
+    margin: auto;
+    cursor: pointer;
+}
+
+.bulb-on{
+    width: 265px;
+    height: 400px;
+    background: url('./img/lighton.png') no-repeat;
+    margin: auto;
+    cursor: pointer;
+} */
+
+/* вариант 2 */
+
+.light-switch {
+    width: 600px;
+    height: 500px;
+    margin: 50px auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+#btn1, #btn2 {
+    font-size: large;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#btn1 {
+    color: white;
+    background-color: black;
+    margin-right: 50px;
+}
