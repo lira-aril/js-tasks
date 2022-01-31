@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
     })
 
     document.getElementById("division").addEventListener("click", ()=> {
-        calcScreen.value += "&divide"
+        calcScreen.value += "/"
     })
 
     document.getElementById("power").addEventListener("click", ()=> {
@@ -66,13 +66,23 @@ document.addEventListener("DOMContentLoaded", ()=> {
         calcScreen.value += "√"
     })
 
+    document.getElementById("clear").addEventListener("click", ()=> {
+        calcScreen.value = ""
+    })
+
     document.getElementById("equal").addEventListener('click', calculate)
  
     function calculate () {
         let sign = 0
         let text = document.querySelector("input").value
+        if (text[0] === "√") {
+            const rootNum = Number(text.slice(1, text.length));
+            let result = Math.sqrt(rootNum);
+            document.querySelector("input").value = result
+
+        } else {
         for ( let i = 0; i < text.length; i++ ) {
-            if ("+-/*n&divide".includes(text[i])){
+            if ("+-/*n/".includes(text[i])){
                 sign = i
             }
         }
@@ -84,12 +94,9 @@ document.addEventListener("DOMContentLoaded", ()=> {
         else if (text[sign] == "*") result = firstNum * secondNum
         else if (text[sign] == "/") result = firstNum / secondNum
         else if (text[sign] == "n") result = firstNum ** secondNum
-        else if (text[sign] == "&divide") {
-            let rootNum;
-            firstNum = rootNum * rootNum
-        }
         
         document.querySelector("input").value = result
+    }
     }
 
 })
