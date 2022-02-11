@@ -19,7 +19,7 @@ document.addEventListener ("DOMContentLoaded", () => {
   setInterval(clock, 1000);
   clock();
 
-  const countDownDate = new Date("Feb 08, 2022 06:30:00").getTime();
+  const countDownDate = new Date("Feb 05, 2022 06:30:00").getTime();
   let x = setInterval(function() {
   // Сегодняшняя дата
   let now = new Date().getTime();

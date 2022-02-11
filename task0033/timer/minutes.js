@@ -1,14 +1,20 @@
 document.addEventListener ("DOMContentLoaded", () => {
    
     const element = document.querySelector("#min")
-    element.innerText = "25:00"
+    let intervalID = 0
+
+    if (localStorage.getItem("time")) {
+        element.innerText = localStorage.getItem("time")
+    } else {
+        element.innerText = "25:00"
+    }
 
     const startButton = document.getElementById("start")
-    let intervalID = 0
+    
     startButton.addEventListener("click", ()=> {
         if (intervalID < 1) {
             intervalID = setInterval (myTimer, 1000)
-        } 
+        }   
     })
 
     const pauseButton = document.getElementById("pause")
@@ -25,7 +31,6 @@ document.addEventListener ("DOMContentLoaded", () => {
         element.innerText = "25:00"
     })
 
-    element.innerText = localStorage.getItem("number");
 })
 
 function myTimer () {
@@ -48,8 +53,8 @@ function myTimer () {
         seconds = convertTime(seconds)
         minutes = convertTime(minutes)
         
+        localStorage.setItem("time", element.innerText)
         element.innerText = `${minutes}:${seconds}`;
-        localStorage.setItem("number", element.innerText)
         
 }
 
